@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns="http://document.dha.gov.by" idDoc="10" idDocType="1"
+     docName="Информационное письмо Д/ПД/УО об изменении места хранения">
+
+    <docAttr type="HBlock" header="Об изменении места ответственного хранения" visible="1">
+        <attr num="100" type="HBlock" visible="1">
+        <attr textWidth="50" type="Date" header="Дата: " visible="1" editable="1" required="1">
+            <value>31.08.2018</value>
+        </attr>
+        <attr textWidth="50" type="Number" header="№" footer="(номер)" visible="1" editable="1"  required="1">
+            <value>1045</value>
+        </attr>
+        </attr>
+        <attr num="100" type="HBlock" visible="1">
+            <attr type="Date" header="Срок передачи:" footer="(номер)" visible="1" editable="1"  required="1">
+                <value>1045</value>
+            </attr>
+        </attr>
+        <attr num="100" type="HBlock" visible="1">
+            <attr num="20" type="String" alignment="right" inputWidth="600" columnRef="ORG_NAME" code="orgName"
+                  header="Примечание" footer="Примечание" postfix="(при необходимости)" editable="1" visible="1"  required="1">
+                <value></value>
+            </attr>
+        </attr>
+    </docAttr>
+
+    <docOrgs num="10" type="VBlock" tableRef="DOC_ORGS" footer="Footer" header="Информационное письмо для:"
+             prefix="Prefix" postfix="Postfix" visible="1" alignment="left">
+        <refOrg num="15" type="VBlock" footer="Footer" visible="1" alignment="left">
+            <attr num="20" type="String" textWidth="10" inputWidth="600" columnRef="ORG_NAME" code="orgName"
+                footer="наименование уполномоченного органа" editable="1" visible="1" required="1" >
+                <value></value>
+            </attr>
+        </refOrg>
+        <refOrg num="25" type="HBlock" visible="1">
+            <attr num="30" type="String" textWidth="500" header="наименование организации, принявшей имущество на хранение, фамиля, имя собственное, отчество(если таковое имеется) физического лица, в том числе ИП" inputWidth="200" columnRef="ORG_NAME" code="orgName" editable="1"
+                  visible="1" required="1">
+                <value></value>
+            </attr>
+        </refOrg>
+        <refOrg num="35" type="HBlock" visible="1">
+            <attr num="40" type="String" textWidth="10" inputWidth="600" columnRef="ORG_NAME" code="orgName"
+                  editable="1" footer="наименование организации, принимающей имущество на хранение" visible="1" required="1">
+                <value></value>
+            </attr>
+        </refOrg>
+        <refOrg num="45" type="HBlock" visible="1">
+            <attr num="50" type="Text" textWidth="10" inputWidth="600" columnRef="ORG_NAME" code="orgName" editable="1"
+                  footer="(наименование управление по области, по г.Минску и Минской области Депортамента по гуманитарной деятельности Управления делами Президента РБ, созданного в нем межрайонного отдела)"
+                  visible="1" required="1">
+                <value></value>
+            </attr>
+        </refOrg>
+
+
+    </docOrgs>
+
+    <docDocs num="5" type="VBlock" tableRef="DOC_DOCS" visible="1" alignment="center">
+
+
+        <refDoc num="10" type="HBlock"  header="В соответствии с пунктом 30 Положения о порядке учета, хранения, оценки и реализации имущества, изъятого, арестованного или обращенного в доход государства, утвержденного Указом Президента РБ от 19.02.2016 № 63, информирует о необходимости изменения места хранения имущества, поименованного в:" prefix="Prefix"  visible="1" alignment="right">
+            <attr num="100" type="HBlock"  header="Номер и дата решения и (или) документа, содержащего опись имущества:" visible="1">
+                <attr num="20" type="Number" columnRef="DOC_NUMBER" code="docNumber" header="№" editable="1" visible="1" required="1" alignment="right"><value>10</value></attr>
+                <attr num="40" type="Date" header="от"  editable="1" visible="1"  required="1"><value>21.09.2017</value></attr>
+            </attr>
+        </refDoc>
+        <refDoc num="70" type="HBlock" code="refDoc" editable="1" header="находящегося на хранении в:" visible="1">
+            <attr num="100" type="VBlock" code="header" header="Наименование организации, принявшей имущество на хранение (фамилия, собственное имя, отчество (если таковое имеется) физического лица, в том числе ИП), УНП (при наличии):" visible="1">
+                <attr num="140" type="String" inputWidth="500" footer="Наименование организации, принявшей имущество на хранение" editable="1" visible="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Фамилия" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Собственное имя" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Отчество" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="Number" inputWidth="160" footer="УНП" editable="1" visible="1" required="1"><value></value></attr>
+            </attr>
+
+            <attr num="100" type="VBlock" code="header" header="Фамилия, собственное имя, отчество (если таковое имеется) материально ответственного лица, принявшего имущество на хранение, должность (при наличии), телефон, место нахождения складских помещений и (или) мест хранения:" visible="1">
+                <attr num="140" type="String" inputWidth="160" footer="Фамилия" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Собственное имя" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Отчество" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Должность" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Телефон" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Складские помещения" editable="1" visible="1" required="1"><value></value></attr>
+                <attr num="140" type="String" inputWidth="160" footer="Место хранения" editable="1" visible="1" required="1"><value></value></attr>
+            </attr>
+        </refDoc>
+
+        <refDoc num="10" type="VBlock" header="в соответствии с:" visible="1">
+            <attr num="100" type="HBlock" code="header" header="Номер и дата акта передачи на хранение либо иного документа, на основании которого имущество передано на хранение:" visible="1">
+                <attr num="20" type="Number" header="№" footer="№ документа" editable="1" visible="1" alignment="right" required="1"><value>10</value></attr>
+                <attr num="40" type="Date"  header="Дата" prefix="Prefix" postfix="Postfix" editable="1" visible="1"  required="1" formatJava="dd.MM.yyyy" formatOracle="dd.mm.yyyy"><value>21.09.2017</value></attr>
+                <attr num="30" type="String" header="Серия" footer="Серия" editable="1" visible="1" required="1"><value></value></attr>
+            </attr>
+        </refDoc>
+
+        <refDoc num="10" type="VBlock" header="и передачи указанного имущества на хранение:" visible="1">
+            <attr num="100" type="HBlock" code="header" header="Наименование организации, принявшей имущество на хранение (фамилия, собственное имя, отчество (если таковое имеется) физического лица, в том числе ИП), УНП (при наличии):" visible="1">
+                <attr num="20" type="Number" header="№" footer="№ документа" editable="1" visible="1" alignment="right" required="1"><value>10</value></attr>
+                <attr num="40" type="Date" header="Дата" prefix="Prefix" postfix="Postfix" editable="1" visible="1" required="1" formatJava="dd.MM.yyyy" formatOracle="dd.mm.yyyy"><value>21.09.2017</value></attr>
+                <attr num="30" type="String" header="Серия" footer="Серия" editable="1" visible="1" required="1"><value></value></attr>
+            </attr>
+        </refDoc>
+    </docDocs>
+
+    <docSign num="10" type="VBlock" tableRef="DOC_PERSON_GROUPS" footer="Footer" header="Подписывающие: " prefix="Prefix" visible="1" editable="1" required="1" alignment="left">
+    <docPersonGroup num="20" type="VBlock" visible="1" editable="1">
+
+        <docPerson num="25" type="HBlock" visible="1" editable="0" header="Должность, инициалы, фамилия" required="0" alignment="left">
+            <attr num="30" type="String" header="Должность" columnRef="PERSON_JOB" code="job" footer="(должность)" sql="SQL" regularExp="regexp" maxLength="1" minLength="1" minValue="min" maxValue="max" mask="__.__.____" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
+            <attr num="40" type="String" header="Фамилия, инициалы" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value></value></attr>
+        </docPerson>
+        </docPersonGroup>
+    </docSign>
+
+
+</doc>

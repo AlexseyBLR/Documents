@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns="http://document.dha.gov.by" docName="Письмо">
+
+   <docAttr type="HBlock" header="О невозможности проведения работ по проверке имущества на качество и безопасность" visible="1">
+      <attr type="HBlock" sql="www" visible="1">
+         <attr type="Date"  header="Рег. дата исх." visible="1" editable="1" required="1"><value></value></attr>
+         <attr type="String" header="Рег. номер исх" footer="номер" visible="1" editable="1"  required="1"><value></value></attr>
+      </attr>
+      <attr type="HBlock" visible="1">
+         <attr type="String" inputWidth="900" alignment="left" header="Примечание" editable="1" visible="1"  required="1"><value></value></attr>
+      </attr>
+      <attr type="HBlock" header="Приложение: " visible="1">
+         <attr type="String" inputWidth="50" alignment="left" prefix="на" postfix="л. " editable="1" visible="1"  required="1"><value></value></attr>
+         <attr type="String" inputWidth="50" alignment="left" prefix="в" postfix="экз" editable="1" visible="1"  required="1"><value></value></attr>
+      </attr>
+
+       <attr type="HBlock" header="Исполнитель: " visible="1">
+           <attr type="String" header="Фамилия" footer="Фамилия" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
+           <attr type="String" header="Номер телефона" footer="Номер телефона" visible="1" editable="1" required="1"><value></value></attr>
+       </attr>
+   </docAttr>
+
+   <docOrgs type="VBlock" header="Информационное письмо для:" visible="1">
+      <refOrg num="15" type="VBlock" header="Отправитель:" visible="1">
+          <attr type="String" header="Наименование организации УО" inputWidth="600" editable="1" visible="1" required="1" >
+          <value></value>
+          </attr>
+      </refOrg>
+       <refOrg num="15" type="VBlock" header="Получатель:"  visible="1">
+           <attr type="String" header="Наименование ОПКБ" inputWidth="600" editable="1" visible="1" required="1" >
+               <value></value>
+           </attr>
+       </refOrg>
+   </docOrgs>
+
+   <docDocs type="VBlock" header="Документы:" visible="1">
+       <refDoc type="HBlock" header="Заявка на проведение работ (оказания услуг): " visible="1">
+           <attr type="HBlock"  visible="1">
+               <attr type="Date" prefix="от"  editable="1" visible="1"  required="1"><value></value></attr>
+               <attr type="Number" prefix="№" footer="Номер" inputWidth="80" editable="1" visible="1" required="1" alignment="right"><value></value></attr>
+               <attr type="Date" prefix=" (получена" editable="1" visible="1"  required="1"><value></value></attr>
+               <attr type="Number" prefix="№" postfix=")" footer="Номер" inputWidth="80" editable="1" visible="1" required="1" alignment="right"><value></value></attr>
+           </attr>
+       </refDoc>
+       <refDoc type="HBlock" header="Документ содержащий опись имущества: " visible="1">
+           <attr type="HBlock"  visible="1">
+               <attr type="Date" prefix="от"  editable="1" visible="1"  required="1"><value></value></attr>
+               <attr type="Number" prefix="№" footer="Номер" inputWidth="80" editable="1" visible="1" required="1" alignment="right"><value></value></attr>
+               <attr type="String" prefix=" серия" footer="Серия" inputWidth="80" editable="1" visible="1" required="1" alignment="right"><value></value></attr>
+               </attr>
+       </refDoc>
+   </docDocs>
+
+    <docAssets>
+        <tableHeader type="Table" header="Имущество:" visible="1" editable="0" required="0" alignment="right">
+            <column num="20" type="RowNum" columnWidth="110" header="Порядковый номер согласно описи имущества" visible="1" editable="1" required="1" alignment="left"/>
+            <column num="40" type="String" columnWidth="450"  header="Полное и точное наименование имущества согласно описи имущества" visible="1" editable="1" required="1"/>
+            <column num="50" type="String" columnWidth="450" header="Основание отказа в проведении работ по проверке имущества на качество и безопасность" visible="1" editable="1" required="1"/>
+        </tableHeader>
+        <tableData>
+            <row idRow="1">
+                <field num="20">1</field>
+                <field num="40"></field>
+                <field num="50"></field>
+            </row>
+            <row idRow="2">
+                <field num="20">2</field>
+                <field num="40"></field>
+                <field num="50"></field>
+            </row>
+        </tableData>
+    </docAssets>
+
+    <docSign type="VBlock" tableRef="DOC_PERSON_GROUPS" footer="Footer" header="Подписывающие: " prefix="Prefix" visible="1" editable="1" required="1" alignment="left">
+        <docPersonGroup type="VBlock" visible="1" editable="1">
+            <docPerson type="VBlock" visible="1" editable="0" header="Должность, инициалы, фамилия" required="0" alignment="left">
+                <attr type="String" header="Должность" footer="Должность" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
+                <attr type="String" header="Фамилия, инициалы" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value></value></attr>
+            </docPerson>
+        </docPersonGroup>
+    </docSign>
+
+</doc>

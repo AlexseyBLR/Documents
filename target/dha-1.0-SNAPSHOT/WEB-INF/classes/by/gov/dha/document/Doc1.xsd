@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://document.dha.gov.by"
+        targetNamespace="http://document.dha.gov.by"
+        elementFormDefault="qualified">
+
+    <attributeGroup name="SimpleAttrGroup">
+        <attribute name="num" type="int"/>
+        <attribute name="type" type="string"/>
+        <attribute name="code" type="string"/>
+        <attribute name="footer" type="string"/>
+        <attribute name="header" type="string"/>
+        <attribute name="prefix" type="string"/>
+        <attribute name="postfix" type="string"/>
+        <attribute name="visible" type="int"/>
+        <attribute name="editable" type="int"/>
+        <attribute name="required" type="int"/>
+        <attribute name="alignment" type="string"/>
+        <attribute name="inputWidth" type="int"/>
+        <attribute name="textWidth" type="int"/>
+    </attributeGroup>
+
+    <attributeGroup name="DataRestrictAttrGroup">
+        <attribute name="columnRef" type="string"/>
+
+        <attribute name="sql" type="string"/>
+        <attribute name="regularExp" type="string"/>
+        <!--для string-->
+        <attribute name="minLength" type="int"/>
+        <attribute name="maxLength" type="int"/>
+        <!--для string-->
+        <attribute name="minValue" type="string"/>
+        <attribute name="maxValue" type="string"/>
+        <!--для date, number-->
+        <attribute name="mask" type="string"/>
+        <!--для date, number-->
+        <attribute name="formula" type="string"/>
+        <!-- для date-->
+        <attribute name="formatJava" type="string"/>
+        <!--для date-->
+        <attribute name="formatOracle" type="string"/>
+    </attributeGroup>
+
+    <complexType name="Column">
+        <sequence>
+            <element name="column" type="tns:Column" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attributeGroup ref="tns:DataRestrictAttrGroup"/>
+    </complexType>
+
+    <complexType name="TableHeader">
+        <sequence>
+            <element name="column" type="tns:Column" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+    <complexType name="Field">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="num" type="int"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="Row">
+        <sequence>
+            <element name="field" type="tns:Field" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+    <complexType name="TableData">
+        <sequence>
+            <element name="row" type="tns:Row" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="SimpleTable">
+        <sequence>
+            <element name="tableHeader" type="tns:TableHeader"/>
+            <element name="tableData" type="tns:TableData"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+    </complexType>
+
+    <!--
+      <complexType name="Attr">
+        <simpleContent>
+          <extension base="string">
+            <attributeGroup ref="tns:ColumnDataAttrGroup"/>
+          </extension>
+        </simpleContent>
+      </complexType>
+
+      <complexType name="Attr" mixed="true">
+        <sequence>
+          <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:ColumnDataAttrGroup"/>
+      </complexType>
+    -->
+
+    <complexType name="Attr">
+        <sequence>
+            <element name="value" type="string"/>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attributeGroup ref="tns:DataRestrictAttrGroup"/>
+    </complexType>
+
+    <complexType name="DocAttr">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+    <complexType name="RefDoc">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="idRefDocType" type="int"/>
+        <attribute name="idRefDoc" type="int"/>
+        <attribute name="orderNum" type="int"/>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+    <complexType name="DocDocs">
+        <sequence>
+            <element name="refDoc" type="tns:RefDoc" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+    <complexType name="RefOrg">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="idRefOrgType" type="int"/>
+        <attribute name="idOrg" type="int"/>
+        <attribute name="idConfPerson" type="int"/>
+        <attribute name="isExtConfPerson" type="int"/>
+        <attribute name="orderNum" type="int"/>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+    <complexType name="DocOrgs">
+        <sequence>
+            <element name="refOrg" type="tns:RefOrg" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+    <complexType name="DocPerson">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="sql" type="string"/>
+        <attribute name="orderNum" type="int"/>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+    <complexType name="DocPersonGroup">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+            <element name="docPerson" type="tns:DocPerson" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+        <attribute name="maxLength" type="int"/>
+        <attribute name="minLength" type="int"/>
+        <attribute name="orderNum" type="int"/>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+    <complexType name="DocSign">
+        <sequence>
+            <element name="docPersonGroup" type="tns:DocPersonGroup" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+    <complexType name="RefBankDetails">
+        <sequence>
+            <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="orderNum" type="int"/>
+        <attribute name="idRow" type="int"/>
+    </complexType>
+
+
+    <complexType name="DocBankDetails">
+        <sequence>
+            <element name="refBankDetails" type="tns:RefBankDetails" maxOccurs="unbounded"/>
+        </sequence>
+        <attributeGroup ref="tns:SimpleAttrGroup"/>
+        <attribute name="tableRef" type="string"/>
+    </complexType>
+
+
+    <complexType name="Doc">
+        <sequence>
+            <element name="docAttr" type="tns:DocAttr"/>
+            <element name="docDocs" type="tns:DocDocs"/>
+            <element name="docOrgs" type="tns:DocOrgs"/>
+            <element name="docSign" type="tns:DocSign"/>
+            <element name="docWaste" type="tns:SimpleTable"/>
+            <element name="docAssets" type="tns:SimpleTable"/>
+            <element name="docServices" type="tns:SimpleTable"/>
+            <element name="docBankDetails" type="tns:DocBankDetails"/>
+        </sequence>
+        <attribute name="idDoc" type="int"/>
+        <attribute name="idDocType" type="int"/>
+        <attribute name="docName" type="string"/>
+    </complexType>
+</schema>

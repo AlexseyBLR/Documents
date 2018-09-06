@@ -1,0 +1,81 @@
+<document ID_DOC="17" ID_DOC_TYPE="22">
+    <doc>
+        <row>
+            <idDoc type="NUMBER" length="22">17</idDoc>
+            <idDocType type="NUMBER" length="22">22</idDocType>
+            <docSeries type="VARCHAR2" length="40"/>
+            <docNumber type="VARCHAR2" length="80">1045</docNumber>
+            <docDate type="DATE" length="10">01.09.2017</docDate>
+            <docPlace type="VARCHAR2" length="1000"/>
+            <docNote type="VARCHAR2" length="4000">Примечание 1045</docNote>
+            <docStatus type="NUMBER" length="22"/>
+            <idAuthorUser type="NUMBER" length="22"/>
+            <authorUserFio type="VARCHAR2" length="400"/>
+            <authorUserJob type="VARCHAR2" length="400"/>
+            <idAuthorOrg type="NUMBER" length="22">1001</idAuthorOrg>
+            <authorOrgName type="VARCHAR2" length="2000">Управление Департамента по гуманитарной деятельности Управления
+                делами Президента Республики Беларусь по г. Минску и Минской области
+            </authorOrgName>
+            <idDestOrg type="NUMBER" length="22"/>
+            <destOrgName type="VARCHAR2" length="2000"/>
+            <actionBeginDate type="DATE" length="10"/>
+            <actionEndDate type="DATE" length="10"/>
+            <actionPauseTime type="VARCHAR2" length="80"/>
+            <actionPauseReason type="VARCHAR2" length="2000"/>
+            <idStorageDoc type="NUMBER" length="22"/>
+            <idInventoryDoc type="NUMBER" length="22">10</idInventoryDoc>
+            <idInventoryEstDoc type="NUMBER" length="22"/>
+            <idTransferDoc type="NUMBER" length="22">13</idTransferDoc>
+            <idBasisDoc type="NUMBER" length="22"/>
+            <basisDocName type="VARCHAR2" length="4000"/>
+            <basisCost type="VARCHAR2" length="4000"/>
+            <idConfCategory type="NUMBER" length="22"/>
+            <idConfPerson type="NUMBER" length="22"/>
+            <idAuthOrg type="NUMBER" length="22"/>
+            <authOrgName type="VARCHAR2" length="4000"/>
+            <idCompOrg type="NUMBER" length="22"/>
+            <compOrgName type="VARCHAR2" length="4000"/>
+            <compOrgTypeDecision type="VARCHAR2" length="4000"/>
+            <isExtKeeper type="NUMBER" length="22">0</isExtKeeper>
+            <idKeeperOrg type="NUMBER" length="22">100</idKeeperOrg>
+            <keeperOrgName type="VARCHAR2" length="2000">ОАО &quot;Торгово-логистический центр &quot;Озерцо-логистик&quot;</keeperOrgName>
+            <idKeeperOrgPlace type="NUMBER" length="22"/>
+            <keeperOrgPlaceName type="VARCHAR2" length="2000">CBX BA-0601/0000003</keeperOrgPlaceName>
+            <keeperOrgPlaceAddress type="VARCHAR2" length="4000">223021, Минский район, 500 метров восточнее д.
+                Богатырево
+            </keeperOrgPlaceAddress>
+            <idExtKeeper type="NUMBER" length="22"/>
+            <isSignRequired type="NUMBER" length="22"/>
+            <isScanRequired type="NUMBER" length="22"/>
+            <otherActionName type="VARCHAR2" length="4000"/>
+            <idPayee type="NUMBER" length="22"/>
+            <idPayer type="NUMBER" length="22"/>
+            <addendumPages type="NUMBER" length="22"/>
+            <addendumCopies type="NUMBER" length="22"/>
+            <docCopies type="NUMBER" length="22"/>
+            <addendumNumber type="NUMBER" length="22"/>
+            <docNumberInner type="VARCHAR2" length="80"/>
+            <docDateInner type="DATE" length="10"/>
+            <idRequestDoc type="NUMBER" length="22"/>
+            <idDepartOrg type="NUMBER" length="22"/>
+            <otherActionTerm type="NUMBER" length="22"/>
+            <otherActionDecision type="VARCHAR2" length="2000"/>
+            <destUserFio type="VARCHAR2" length="400"/>
+            <destUserJob type="VARCHAR2" length="400"/>
+            <otherUserInfo type="VARCHAR2" length="4000"/>
+            <genericAssets type="VARCHAR2" length="4000"/>
+            <gerericProducers type="VARCHAR2" length="4000"/>
+            <genericDocs type="VARCHAR2" length="4000"/>
+            <genericAssetDetails type="VARCHAR2" length="4000"/>
+            <genericPackage type="VARCHAR2" length="4000"/>
+            <genericRevision type="VARCHAR2" length="4000"/>
+            <genericPackageState type="VARCHAR2" length="4000"/>
+            <genericStorage type="VARCHAR2" length="4000"/>
+            <departOrgName type="VARCHAR2" length="4000"/>
+            <idActDoc type="NUMBER" length="22">1</idActDoc>
+            <idKeeperUser type="NUMBER" length="22"/>
+            <keeperUserDesc type="VARCHAR2" length="4000"/>
+        </row>
+    </doc>
+    <view/>
+</document>

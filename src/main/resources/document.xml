@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns="http://document.dha.gov.by" idDoc="10" idDocType="1" docName="Уведомление">
+<docAttr num="5" type="VBlock"  tableRef="DOC" code="docAttr" footer="Footer" header="Header" visible="1" editable="1" required="1" alignment="left">
+
+    <attr num="10" textWidth="150" inputWidth="200" type="Date" columnRef="DOC_DATE" code="docDate" footer="(дата)" header="Дата:" prefix="Prefix" postfix="" minValue="01.01.2016" maxValue="01.12.2019" mask="__.__.____" visible="1" editable="1" required="1" formatJava="dd.MM.yyyy" formatOracle="dd.mm.yyyy"><value>21.09.2017</value></attr>
+    <attr num="20" textWidth="150" inputWidth="500" type="String" columnRef="DOC_NUMBER" code="docNumber" footer="(номер документа)" header="№" visible="1" editable="1" required="1"><value>String3</value></attr>
+    <attr num="30" type="SelectOneChoiceOrInput" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">
+        <attr num="50" type="String" columnRef="KEEPER_ORG_NAME" code="keeperItemLabel" maxLength="1" minLength="10" visible="1" editable="1" required="0"><value>String6</value></attr>
+        <attr num="40" type="Number" columnRef="ID_KEEPER_ORG" header='' code="keeperItemValue" regularExp="regexp" minValue="0" maxValue="999" visible="1" editable="1" required="0"><value>28</value></attr>
+        <attr num="40" type="Number" columnRef="ID_KEEPER_ORG" header='' code="keeperItemValue" regularExp="regexp" minValue="0" maxValue="999" visible="1" editable="1" required="0"><value>278</value></attr>
+    </attr>
+    <attr num="70" type="Date" textWidth="150" inputWidth="200" columnRef="TERM_TO" code="termTo" footer="(дата)" header="В срок до:" mask="__.__.____" visible="1" editable="1" required="1"><value>21.09.2017</value></attr>
+    <attr num="80" type="String" textWidth="150" inputWidth="200" columnRef="DOC_NOTE" code="docNote" header="Примечание (при необходимости):" visible="1" editable="1" required="0"><value>String26</value></attr>
+</docAttr>
+
+
+<docDocs num="5" type="VBlock" tableRef="DOC_DOCS" header="header" code="docDocs" footer="Footer" prefix="Prefix" postfix="Postfix" visible="1" alignment="center">
+    <refDoc num="10" type="HBlock" code="refDoc" footer="Footer" header="Имущество поименованно в:" prefix="Prefix" postfix="Postfix" visible="1" alignment="right" idRefDocType="1" idRefDoc="1" orderNum="1" idRow="1">
+       <attr num="20" type="String" columnRef="DOC_NUMBER" code="docNumber" footer="Footer" header="№" prefix="Prefix" postfix="Postfix" editable="1" visible="1" alignment="right" required="1"><value>10</value></attr>
+       <attr num="30" type="String" columnRef="DOC_SERIES" code="docSeries" header="Серия" prefix="Prefix" postfix="Postfix" editable="1" visible="1"><value>String3</value></attr>
+       <attr num="40" type="Date" columnRef="DOC_DATE" code="docDate" header="от" prefix="Prefix" postfix="Postfix" editable="1" visible="1" formatJava="dd.MM.yyyy" formatOracle="dd.mm.yyyy"><value>21.09.2017</value></attr>
+    </refDoc>
+    <refDoc num="70" type="HBlock" code="refDoc" editable="1" header="Находящегося на хранении:" visible="1">
+          <attr num="100" type="HBlock" code="header" header="В соответствии с:" visible="1">
+             <attr num="120" type="String" columnRef="DOC_NUMBER" code="docNumber" header="№" editable="1" visible="1"><value>String3</value></attr>
+             <attr num="140" type="Date" columnRef="DOC_DATE" code="docDate" header="от"  editable="1" visible="1"><value>21.09.2017</value></attr>
+          </attr>
+    </refDoc>
+</docDocs>
+
+
+ <docOrgs num="10" type="VBlock" tableRef="DOC_ORGS" footer="Footer" header="Информационное письмо для:" prefix="Prefix" postfix="Postfix" visible="1" alignment="left">
+    <refOrg num="15" type="HBlock"  footer="Footer"  prefix="Prefix" postfix="Postfix" visible="1" alignment="left" idRefOrgType="1" orderNum="1" idOrg="1" idConfPerson="1" isExtConfPerson="0" idRow="1">
+       <attr num="20" type="String" textWidth="150" inputWidth="200"  columnRef="ORG_NAME" code="orgName" header="dfdfd" footer="(наименование уполномоченного органа)" editable="1" visible="1" required="1"><value></value></attr>
+    </refOrg>
+    <refOrg num="25" type="HBlock" visible="1" >
+       <attr num="30" type="String" textWidth="150" inputWidth="200" columnRef="ORG_NAME" header="Header" code="orgName" editable="1" footer="(наименование организации, принявшей имущество на хранение)" visible="1"><value></value></attr>
+    </refOrg>
+    <refOrg num="35" type="HBlock" visible="1">
+       <attr num="40" type="String" columnRef="ORG_NAME" code="orgName" editable="1" footer="(наименование организации, принимающей имущество на хранение)" visible="1"><value></value></attr>
+    </refOrg>
+    <refOrg num="45" type="HBlock" visible="1">
+       <attr num="50" type="String" columnRef="ORG_NAME" code="orgName" editable="1" footer="(наименование управление по области, по г.Минску и Минской области, созданного в нем межрайонного отдела)" visible="1"><value>String3</value></attr>
+    </refOrg>
+</docOrgs>
+
+
+<docSign num="10" type="VBlock" tableRef="DOC_PERSON_GROUPS" footer="Footer" header="Подписывающие: " prefix="Prefix" postfix="Postfix" visible="1" editable="1" required="1" alignment="left">
+    <docPersonGroup num="20" type="VBlock" tableRef="DOC_PERSONS" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" maxLength="1" minLength="1" visible="1" editable="1" required="1" alignment="left" idRow="1">
+       <attr num="22" type="Number" textWidth="150" inputWidth="200" columnRef="PERSON_GROUP_NUM" code="personGroupNum" footer="Footer" header="Передал:" prefix="Prefix" postfix="Postfix" sql="SQL" maxLength="1" minLength="1" minValue="1" maxValue="99" mask="mask" visible="1" editable="0" required="0" alignment="left"><value>15</value></attr>
+       <attr num="23" type="String" textWidth="150" inputWidth="200" columnRef="PERSON_GROUP_NAME" code="personGroupName" visible="1" editable="0" required="0"><value></value></attr>
+       <docPerson num="25" type="HBlock" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" visible="1" editable="0" required="0" alignment="left" idRow="2">
+          <attr num="30" type="String" columnRef="PERSON_JOB" code="job" footer="(должность)" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" regularExp="regexp" maxLength="1" minLength="1" minValue="min" maxValue="max" mask="__.__.____" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
+          <attr num="40" type="String" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value></value></attr>
+          <attr num="50" type="Date" columnRef="PERSON_DATE" code="signDate" footer="(дата)" mask="__.__.____" visible="1" editable="1" required="1"><value>21.09.2017</value></attr>                                                                                                                        </docPerson>
+       <docPerson num="55" type="HBlock" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" visible="1" editable="0" required="0" alignment="left">
+          <attr num="60" type="String" columnRef="PERSON_JOB" code="job" footer="(должность)" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" regularExp="regexp" maxLength="1" minLength="1" minValue="min" maxValue="max" mask="__.__.____" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
+          <attr num="70" type="String" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value></value></attr>
+          <attr num="80" type="Date" columnRef="PERSON_DATE" code="signDate" footer="(дата)" mask="__.__.____" visible="1" editable="1" required="1"><value>21.09.2017</value></attr>                                                                                                                        </docPerson>
+    </docPersonGroup>
+    <docPersonGroup num="120" type="VBlock" tableRef="DOC_PERSONS" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" maxLength="1" minLength="1" visible="1" editable="1" required="1" alignment="left">
+       <attr num="122" type="Number" textWidth="150" inputWidth="200" columnRef="PERSON_GROUP_NUM" code="personGroupNum" footer="Footer" header="Передал:" prefix="Prefix" postfix="Postfix" sql="SQL" maxLength="1" minLength="1" minValue="1" maxValue="99" mask="mask" visible="1" editable="0" required="0" alignment="left"><value>144</value></attr>
+       <attr num="123" type="String" textWidth="150" inputWidth="200" columnRef="PERSON_GROUP_NAME" code="personGroupName" visible="1" editable="0" required="0"><value>String3</value></attr>
+       <docPerson num="125" type="HBlock" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" visible="1" editable="0" required="0" alignment="left">
+          <attr num="130" type="String" columnRef="PERSON_JOB" code="job" footer="(должность)" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" regularExp="regexp" maxLength="1" minLength="1" minValue="min" maxValue="max" mask="__.__.____" visible="1" editable="1" required="1" alignment="left"><value>String3</value></attr>
+          <attr num="140" type="String" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value>String3</value></attr>
+          <attr num="150" type="Date" columnRef="PERSON_DATE" code="signDate" footer="(дата)" mask="__.__.____" visible="1" editable="1" required="1"><value>21.09.2017</value></attr>                                                                                                                      </docPerson>
+       <docPerson num="155" type="HBlock" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" visible="1" editable="0" required="0" alignment="left">
+           <attr num="160" type="String" columnRef="PERSON_JOB" code="job" footer="(должность)" header="Header" prefix="Prefix" postfix="Postfix" sql="SQL" regularExp="regexp" maxLength="1" minLength="1" minValue="min" maxValue="max" mask="__.__.____" visible="1" editable="1" required="1" alignment="left"><value>String3</value></attr>
+          <attr num="170" type="String" columnRef="PERSON_FIO" code="fio" footer="(инициалы, фамилия)" visible="1" editable="1" required="1"><value>String3</value></attr>
+          <attr num="180" type="Date" columnRef="PERSON_DATE" code="signDate" footer="(дата)" mask="__.__.____" visible="1" editable="1" required="1"><value>21.09.2017</value></attr>                                                                                                                      </docPerson>
+   </docPersonGroup>
+</docSign>
+
+
+
+<docWaste num="5" type="VBlock" footer="Footer" header="Header" prefix="Prefix" postfix="Postfix" visible="1" editable="0" required="0" alignment="left">
+    <tableHeader num="10" type="Table" tableRef="DOC_WASTE" footer="Footer" header="В результате уничтожения имущества образовались отходы:" prefix="Prefix" postfix="Postfix" visible="1" editable="0" required="0" alignment="left">
+       <column num="20" type="RowNum" columnWidth="50" code="rowNum" header="п/п" sql="SQL" regularExp="regexp" maxLength="1" minLength="90" minValue="rtyrt" maxValue="rrtyr" mask="mask" visible="1" editable="1" required="1" alignment="left" formatJava="dfghdhf" formatOracle="dhdh"/>
+       <column num="40" type="String" columnWidth="400" columnRef="WASTE_NAME" code="wasteName" header="Наименование отхода" visible="1" editable="1" required="1"/>
+       <column num="50" type="Number" columnWidth="100" columnRef="WASTE_AMOUNT" code="wasteAmount" header="Количество" visible="1" editable="1" required="1"/>
+       <column num="60" type="Number" columnWidth="300" header="Единица измерения" visible="1" editable="1" required="1">
+         <column num="70" type="Number" columnRef="ID_MEASURE" code="idMeasure" header="ID" visible="1" editable="0" required="0"/>
+         <column num="80" type="Number" columnRef="MEASURE_NAME" code="measureName" header="Имя" visible="1" editable="0" required="0"/>
+       </column>
+   </tableHeader>
+
+    <tableData>
+       <row idRow="1">
+          <field num="40">WASTE_NAME1</field>
+          <field num="50">34</field>
+          <field num="70">1</field>
+          <field num="80">MEASURE_NAME1</field>
+       </row>
+       <row idRow="2">
+          <field num="40">WASTE_NAME2</field>
+          <field num="50">45</field>
+          <field num="70">2</field>
+          <field num="80">MEASURE_NAME2</field>
+       </row>
+   </tableData>
+</docWaste>
+
+
+<docAssets>
+
+    <tableHeader num="10" type="Table" tableRef="DOC_ASSETS" footer="Footer" header="В результате уничтожения имущества образовались отходы:" prefix="Prefix" postfix="Postfix" visible="1" editable="0" required="0" alignment="right">
+       <column num="20" type="RowNum" columnWidth="40" code="rowNum" header="п/п" sql="SQL" regularExp="regexp" maxLength="1" minLength="90" minValue="rtyrt" maxValue="rrtyr" mask="mask" visible="1" editable="1" required="1" alignment="left" formatJava="dfghdhf" formatOracle="dhdh"/>
+       <column num="40" type="String" columnWidth="500" columnRef="WASTE_NAME" code="wasteName" header="Наименование отхода" visible="1" editable="1" required="1"/>
+       <column num="50" type="Number" columnWidth="100" columnRef="WASTE_AMOUNT" code="wasteAmount" header="Количество" visible="1" editable="1" required="1"/>
+       <column num="60" type="Number" columnWidth="130" header="Единица измерения" visible="1" editable="1" required="1">
+          <column num="70" type="Number"  columnRef="ID_MEASURE" code="idMeasure" header="ID" visible="1" editable="0" required="0"/>
+          <column num="80" type="Number"  columnRef="MEASURE_NAME" code="measureName" header="Имя" visible="1" editable="0" required="0"/>
+       </column>
+   </tableHeader>
+
+    <tableData>
+       <row idRow="1">
+          <field num="40">WASTE_NAME1</field>
+          <field num="50">34</field>
+          <field num="70">1</field>
+          <field num="80">MEASURE_NAME1</field>
+       </row>
+       <row idRow="2">
+          <field num="40">WASTE_NAME2</field>
+          <field num="50">4545</field>
+          <field num="70">23</field>
+          <field num="80">MEASURE_NAME2</field>
+       </row>
+   </tableData>
+
+</docAssets>
+
+<docServices>
+
+    <tableHeader num="10" type="Table" tableRef="DOC_SERVICES" footer="Footer" header="В результате уничтожения имущества образовались отходы:" prefix="Prefix" postfix="Postfix" visible="1" editable="0" required="0" alignment="right">
+        <column num="20" type="RowNum" columnWidth="40" code="rowNum" header="п/п" sql="SQL" regularExp="regexp" maxLength="1" minLength="90" minValue="rtyrt" maxValue="rrtyr" mask="mask" visible="1" editable="1" required="1" alignment="left" formatJava="dfghdhf" formatOracle="dhdh"/>
+       <column num="40" type="String" columnWidth="400" columnRef="SERVICE_NAME" code="wasteName" header="Наименование отхода" visible="1" editable="1" required="1"/>
+       <column num="50" type="Number" columnWidth="100" columnRef="SERVICE_AMOUNT" code="wasteAmount" header="Количество" visible="1" editable="1" required="1"/>
+       <column num="60" type="Number" columnWidth="180" header="Единица измерения" visible="1" editable="1" required="1">
+          <column num="70" type="Number" columnRef="ID_MEASURE" code="idMeasure" header="ID" visible="1" editable="0" required="0"/>
+          <column num="80" type="Number" columnRef="MEASURE_NAME" code="measureName" header="Имя" visible="1" editable="0" required="0"/>
+       </column>
+   </tableHeader>
+
+    <tableData>
+       <row idRow="1">
+          <field num="40">WASTE_NAME1</field>
+          <field num="50">34</field>
+          <field num="70">1</field>
+          <field num="80">MEASURE_NAME1</field>
+       </row>
+       <row idRow="2">
+          <field num="40">WASTE_NAME2</field>
+          <field num="50">45</field>
+          <field num="70">2</field>
+          <field num="80">MEASURE_NAME2</field>
+       </row>
+   </tableData>
+
+</docServices>
+
+ <docBankDetails num="10" type="HBlock" tableRef="DOC_BANK_DETAILS" footer="Footer" header="Банковские реквизиты: " prefix="Prefix" postfix="Postfix" visible="1" editable="1" required="1" alignment="left">
+     <refBankDetails num="10" type="VBlock" code="refDoc" footer="Footer" header="Плательщик:" prefix="Prefix" postfix="Postfix" visible="1" alignment="right" orderNum="1" idRow="1">
+       <attr num="20" type="String"  textWidth="200" inputWidth="250" columnRef="PARTICIPANT" code="participant" footer="Footer" header="Наименование" prefix="Prefix" postfix="Postfix" visible="1" alignment="right" editable="1"><value>ОАО Мечта</value></attr>
+       <attr num="30" type="String" textWidth="200" inputWidth="250" columnRef="ADDRESS" code="docSeries" header="Серия" prefix="Prefix" postfix="Postfix" visible="1"  editable="1"><value>String3</value></attr>
+       <attr num="40" type="HBlock" code="keeper" header="" sql="" visible="1" editable="1" required="1">
+           <attr num="10" type="Number" columnRef="UNP" code="unp" header="УНП" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>1234567</value></attr>
+           <attr num="20" type="String" columnRef="IBAN" code="iban" header="Расчетный счет" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>BJG98797</value></attr>
+           <attr num="30" type="String" columnRef="BIC" code="bic" header="БИК Банка" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>BELV2354</value></attr>
+       </attr>
+       <attr num="50" type="String" textWidth="200" inputWidth="250" columnRef="BANK_NAME" code="bankName" header="Наименование банка" prefix="Prefix" postfix="Postfix" visible="1" editable="1" ><value>ИдеяБанк 345</value></attr>
+    </refBankDetails>
+     <refBankDetails num="20" type="VBlock" code="refDoc" footer="Footer" header="Получатель:" prefix="Prefix" postfix="Postfix" visible="1" alignment="right" orderNum="1" idRow="1">
+         <attr num="20" type="String" textWidth="150" inputWidth="200" columnRef="PARTICIPANT" code="participant" footer="Footer" header="Наименование" prefix="Prefix" postfix="Postfix" visible="1" alignment="right" editable="1"><value>ОАО Мечта</value></attr>
+         <attr num="30" type="String" textWidth="150" inputWidth="200" columnRef="ADDRESS" code="docSeries" header="Серия" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>String3</value></attr>
+         <attr num="40" type="HBlock" code="keeper" header="" sql="" visible="1" editable="1" required="1">
+             <attr num="10" type="Number" columnRef="UNP" code="unp" header="УНП" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>1234567</value></attr>
+             <attr num="20" type="String" columnRef="IBAN" code="iban" header="Расчетный счет" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>BJG98797</value></attr>
+             <attr num="30" type="String" columnRef="BIC" code="bic" header="БИК Банка" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>BELV2354</value></attr>
+         </attr>
+         <attr num="50" type="String" textWidth="150" inputWidth="200" columnRef="BANK_NAME" code="bankName" header="Наименование банка" prefix="Prefix" postfix="Postfix" visible="1" editable="1"><value>ИдеяБанк 345</value></attr>
+     </refBankDetails>
+</docBankDetails>
+
+
+</doc>
