@@ -1,14 +1,20 @@
 
-package by.gov.dha.document;
+package by.gov.dha.document.test;
 
-import javax.xml.bind.annotation.*;
+import by.gov.dha.document.DocSql;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for Doc complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Doc">
  *   &lt;complexContent>
@@ -22,6 +28,7 @@ import javax.xml.bind.annotation.*;
  *         &lt;element name="docAssets" type="{http://document.dha.gov.by}SimpleTable"/>
  *         &lt;element name="docServices" type="{http://document.dha.gov.by}SimpleTable"/>
  *         &lt;element name="docBankDetails" type="{http://document.dha.gov.by}DocBankDetails"/>
+ *         &lt;element name="docSql" type="{http://document.dha.gov.by}DocSql"/>
  *       &lt;/sequence>
  *       &lt;attribute name="idDoc" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="idDocType" type="{http://www.w3.org/2001/XMLSchema}int" />
@@ -30,19 +37,21 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Doc", namespace = "http://document.dha.gov.by", propOrder = {
-        "docAttr",
-        "docDocs",
-        "docOrgs",
-        "docSign",
-        "docWaste",
-        "docAssets",
-        "docServices",
-        "docBankDetails"
+    "docAttr",
+    "docDocs",
+    "docOrgs",
+    "docSign",
+    "docWaste",
+    "docAssets",
+    "docServices",
+    "docBankDetails",
+    "docSql"
 })
-@XmlRootElement(name = "doc", namespace = "http://document.dha.gov.by")
 public class Doc {
 
     @XmlElement(namespace = "http://document.dha.gov.by", required = true)
@@ -61,6 +70,8 @@ public class Doc {
     protected SimpleTable docServices;
     @XmlElement(namespace = "http://document.dha.gov.by", required = true)
     protected DocBankDetails docBankDetails;
+    @XmlElement(namespace = "http://document.dha.gov.by", required = true)
+    protected DocSql docSql;
     @XmlAttribute(name = "idDoc")
     protected Integer idDoc;
     @XmlAttribute(name = "idDocType")
@@ -70,9 +81,11 @@ public class Doc {
 
     /**
      * Gets the value of the docAttr property.
-     *
-     * @return possible object is
-     * {@link DocAttr }
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocAttr }
+     *     
      */
     public DocAttr getDocAttr() {
         return docAttr;
@@ -80,9 +93,11 @@ public class Doc {
 
     /**
      * Sets the value of the docAttr property.
-     *
-     * @param value allowed object is
-     *              {@link DocAttr }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocAttr }
+     *     
      */
     public void setDocAttr(DocAttr value) {
         this.docAttr = value;
@@ -90,9 +105,11 @@ public class Doc {
 
     /**
      * Gets the value of the docDocs property.
-     *
-     * @return possible object is
-     * {@link DocDocs }
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocDocs }
+     *     
      */
     public DocDocs getDocDocs() {
         return docDocs;
@@ -100,9 +117,11 @@ public class Doc {
 
     /**
      * Sets the value of the docDocs property.
-     *
-     * @param value allowed object is
-     *              {@link DocDocs }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocDocs }
+     *     
      */
     public void setDocDocs(DocDocs value) {
         this.docDocs = value;
@@ -110,9 +129,11 @@ public class Doc {
 
     /**
      * Gets the value of the docOrgs property.
-     *
-     * @return possible object is
-     * {@link DocOrgs }
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocOrgs }
+     *     
      */
     public DocOrgs getDocOrgs() {
         return docOrgs;
@@ -120,9 +141,11 @@ public class Doc {
 
     /**
      * Sets the value of the docOrgs property.
-     *
-     * @param value allowed object is
-     *              {@link DocOrgs }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocOrgs }
+     *     
      */
     public void setDocOrgs(DocOrgs value) {
         this.docOrgs = value;
@@ -130,9 +153,11 @@ public class Doc {
 
     /**
      * Gets the value of the docSign property.
-     *
-     * @return possible object is
-     * {@link DocSign }
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocSign }
+     *     
      */
     public DocSign getDocSign() {
         return docSign;
@@ -140,9 +165,11 @@ public class Doc {
 
     /**
      * Sets the value of the docSign property.
-     *
-     * @param value allowed object is
-     *              {@link DocSign }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocSign }
+     *     
      */
     public void setDocSign(DocSign value) {
         this.docSign = value;
@@ -150,9 +177,11 @@ public class Doc {
 
     /**
      * Gets the value of the docWaste property.
-     *
-     * @return possible object is
-     * {@link SimpleTable }
+     * 
+     * @return
+     *     possible object is
+     *     {@link SimpleTable }
+     *     
      */
     public SimpleTable getDocWaste() {
         return docWaste;
@@ -160,9 +189,11 @@ public class Doc {
 
     /**
      * Sets the value of the docWaste property.
-     *
-     * @param value allowed object is
-     *              {@link SimpleTable }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SimpleTable }
+     *     
      */
     public void setDocWaste(SimpleTable value) {
         this.docWaste = value;
@@ -170,9 +201,11 @@ public class Doc {
 
     /**
      * Gets the value of the docAssets property.
-     *
-     * @return possible object is
-     * {@link SimpleTable }
+     * 
+     * @return
+     *     possible object is
+     *     {@link SimpleTable }
+     *     
      */
     public SimpleTable getDocAssets() {
         return docAssets;
@@ -180,9 +213,11 @@ public class Doc {
 
     /**
      * Sets the value of the docAssets property.
-     *
-     * @param value allowed object is
-     *              {@link SimpleTable }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SimpleTable }
+     *     
      */
     public void setDocAssets(SimpleTable value) {
         this.docAssets = value;
@@ -190,9 +225,11 @@ public class Doc {
 
     /**
      * Gets the value of the docServices property.
-     *
-     * @return possible object is
-     * {@link SimpleTable }
+     * 
+     * @return
+     *     possible object is
+     *     {@link SimpleTable }
+     *     
      */
     public SimpleTable getDocServices() {
         return docServices;
@@ -200,9 +237,11 @@ public class Doc {
 
     /**
      * Sets the value of the docServices property.
-     *
-     * @param value allowed object is
-     *              {@link SimpleTable }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SimpleTable }
+     *     
      */
     public void setDocServices(SimpleTable value) {
         this.docServices = value;
@@ -210,9 +249,11 @@ public class Doc {
 
     /**
      * Gets the value of the docBankDetails property.
-     *
-     * @return possible object is
-     * {@link DocBankDetails }
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocBankDetails }
+     *     
      */
     public DocBankDetails getDocBankDetails() {
         return docBankDetails;
@@ -220,19 +261,47 @@ public class Doc {
 
     /**
      * Sets the value of the docBankDetails property.
-     *
-     * @param value allowed object is
-     *              {@link DocBankDetails }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocBankDetails }
+     *     
      */
     public void setDocBankDetails(DocBankDetails value) {
         this.docBankDetails = value;
     }
 
     /**
+     * Gets the value of the docSql property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DocSql }
+     *     
+     */
+    public DocSql getDocSql() {
+        return docSql;
+    }
+
+    /**
+     * Sets the value of the docSql property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DocSql }
+     *     
+     */
+    public void setDocSql(DocSql value) {
+        this.docSql = value;
+    }
+
+    /**
      * Gets the value of the idDoc property.
-     *
-     * @return possible object is
-     * {@link Integer }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public Integer getIdDoc() {
         return idDoc;
@@ -240,9 +309,11 @@ public class Doc {
 
     /**
      * Sets the value of the idDoc property.
-     *
-     * @param value allowed object is
-     *              {@link Integer }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
     public void setIdDoc(Integer value) {
         this.idDoc = value;
@@ -250,9 +321,11 @@ public class Doc {
 
     /**
      * Gets the value of the idDocType property.
-     *
-     * @return possible object is
-     * {@link Integer }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
     public Integer getIdDocType() {
         return idDocType;
@@ -260,9 +333,11 @@ public class Doc {
 
     /**
      * Sets the value of the idDocType property.
-     *
-     * @param value allowed object is
-     *              {@link Integer }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
     public void setIdDocType(Integer value) {
         this.idDocType = value;
@@ -270,9 +345,11 @@ public class Doc {
 
     /**
      * Gets the value of the docName property.
-     *
-     * @return possible object is
-     * {@link String }
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
     public String getDocName() {
         return docName;
@@ -280,9 +357,11 @@ public class Doc {
 
     /**
      * Sets the value of the docName property.
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     public void setDocName(String value) {
         this.docName = value;
