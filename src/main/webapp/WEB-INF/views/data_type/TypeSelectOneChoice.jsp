@@ -11,29 +11,33 @@
             crossorigin="anonymous"></script>
 </head>
 
+<div class="form-control">
 
-<c:if test="${attr.editable eq '1'}">
-    <c:if test="${attr.visible eq '1'}">
-        ${attr.header}
-        <br>
-        <select name="selectOnChoiceValue">
-            <c:forEach var="attrType" items="${attr.attr}">
-                <option value="${attrType.value}">${attrType.value}</option>
-            </c:forEach>
-        </select>
-    </c:if>
-    <c:if test="${attr.visible eq '0'}"></c:if>
-</c:if>
+    <c:if test="${attr.editable eq '1'}">
+        <c:if test="${attr.visible eq '1'}">
+            ${attr.header}
+            <br>
+            <select name="selectOnChoiceValue">
+                <c:forEach var="options" items="${values.get(attr.sql)}">
+                    <option value="${attrType.value}">${options}</option>
+                </c:forEach>
+            </select>
+        </c:if>
 
-<c:if test="${attr.editable eq '0'}">
-    <c:if test="${attr.visible eq '1'}">
-        ${attr.header}
-        <br>
-        <select name="selectOnChoiceValue" disabled>
-            <c:forEach var="attrType" items="${attr.attr}">
-                <option value="${attrType.value}">${attrType.value}</option>
-            </c:forEach>
-        </select>
+        <c:if test="${attr.visible eq '0'}"></c:if>
     </c:if>
-    <c:if test="${attr.visible eq '0'}"></c:if>
-</c:if>
+
+    <c:if test="${attr.editable eq '0'}">
+        <c:if test="${attr.visible eq '1'}">
+            ${attr.header}
+            <br>
+            <select name="selectOnChoiceValue" disabled>
+                <c:forEach var="options" items="${values.get(attr.sql)}">
+                    <option value="${attrType.value}">${options}</option>
+                </c:forEach>
+            </select>
+        </c:if>
+        <c:if test="${attr.visible eq '0'}"></c:if>
+    </c:if>
+
+</div>

@@ -21,10 +21,8 @@
 
             <input type="radio" name="selectOrInputType" value="select">
             <select name="selectOrInputSelectValue">
-                <c:forEach var="attrType" items="${attr.attr}">
-                    <c:if test="${!(attrType.type eq 'String')}">
-                        <option value="${attrType.value}">${attrType.value}</option>
-                    </c:if>
+                <c:forEach var="options" items="${values.get(attr.sql)}">
+                        <option value="${attrType.value}">${options}</option>
                 </c:forEach>
             </select>
         </c:if>
@@ -41,11 +39,9 @@
                 placeholder="${attr.attr.get(0).footer}" disabled/>
 
             <input type="radio" name="selectOrInputType" value="select" disabled>
-            <select name="selectOrInputSelectValue" disabled>
-                <c:forEach var="attrType" items="${attr.attr}">
-                    <c:if test="${!(attrType.type eq 'String')}">
-                        <option value="${attrType.value}">${attrType.value}</option>
-                    </c:if>
+            <select name="selectOrInputSelectValue">
+                <c:forEach var="options" items="${values.get(attr.sql)}">
+                    <option value="${attrType.value}">${options}</option>
                 </c:forEach>
             </select>
         </c:if>

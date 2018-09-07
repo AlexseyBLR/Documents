@@ -3,18 +3,14 @@ package by.gov.dha.controller;
 
 import by.gov.dha.document.Doc;
 import by.gov.dha.document.SimpleTableValues;
+import by.gov.dha.document.SqlQuery;
 import by.gov.dha.service.DocService;
-import by.gov.dha.service.FindSQLAttribute;
-import by.gov.dha.service.SQLAttributeValuesService;
+import by.gov.dha.service.SQLValuesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/")
@@ -24,7 +20,7 @@ public class AppController {
     private DocService docService;
 
     @Autowired
-    private SQLAttributeValuesService sqlAttributeValuesService;
+    private SQLValuesService sqlValuesService;
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String goToTest(ModelMap modelMap) throws Exception {
@@ -36,12 +32,15 @@ public class AppController {
 
         modelMap.addAttribute("emptyDocument", new Doc());
 
-        Map<String, List<String>> values = new HashMap<>();
-        List<String> dbdList = sqlAttributeValuesService.getAttributeValues("select * from DOC_BANK_DETAILS");
-        values.put("select * from DBD", dbdList);
+        modelMap.addAttribute("values", sqlValuesService.getSqlQueryFromDoc(docService.getDoc()));
+
+//        Map<String, List<String>> values = new HashMap<>();
+
+//        List<String> dbdList = sqlValuesService.getAttributeValues();
+//        values.put("select * from DBD", dbdList);
 
 
-        modelMap.addAttribute("testMap", values);
+//        modelMap.addAttribute("testMap", values);
 
 
         return "MAIN";

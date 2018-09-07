@@ -34,6 +34,7 @@
 <body>
 <div class="container">
 
+    <c:set value="${document.docSql}" var="docSql"/>
     <c:set value="${document.docAttr}" var="docAttr"/>
     <c:set value="${document.docDocs}" var="docDocs"/>
     <c:set value="${document.docOrgs}" var="docOrgs"/>
@@ -43,55 +44,55 @@
     <c:set value="${document.docServices}" var="docServices"/>
     <c:set value="${document.docBankDetails}" var="docBankDetails"/>
 
-    ${testMap.get("select * from DBD").get(0)}
 
 
-    <%--<form:form modelAttribute="emptyDocument" action="/testGet" method="get">--%>
 
-        <%--<h3 style="text-align: center">${document.docName}</h3>--%>
-        <%--<br>--%>
+    <form:form modelAttribute="emptyDocument" action="/testGet" method="get">
 
-        <%--<c:if test="${docAttr !=null}">--%>
-            <%--<%@include file="attr_type/docAttr.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <h3 style="text-align: center">${document.docName}</h3>
+        <br>
 
-        <%--<c:if test="${docOrgs !=null}">--%>
-            <%--<%@include file="attr_type/docOrgs.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docAttr !=null}">
+            <%@include file="attr_type/docAttr.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docDocs !=null}">--%>
-            <%--<%@include file="attr_type/docDocs.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docOrgs !=null}">
+            <%@include file="attr_type/docOrgs.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docWaste !=null}">--%>
-            <%--<%@include file="attr_type/docWaste.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docDocs !=null}">
+            <%@include file="attr_type/docDocs.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docAssets !=null}">--%>
-            <%--<%@include file="attr_type/docAssets.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docWaste !=null}">
+            <%@include file="attr_type/docWaste.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docServices !=null}">--%>
-            <%--<%@include file="attr_type/docServices.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docAssets !=null}">
+            <%@include file="attr_type/docAssets.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docBankDetails !=null}">--%>
-            <%--<%@include file="attr_type/docBankDetails.jsp" %>--%>
-        <%--</c:if>--%>
+        <c:if test="${docServices !=null}">
+            <%@include file="attr_type/docServices.jsp" %>
+            <hr>
+        </c:if>
 
-        <%--<c:if test="${docSign !=null}">--%>
-            <%--<%@include file="attr_type/docSign.jsp" %>--%>
-            <%--<hr>--%>
-        <%--</c:if>--%>
+        <c:if test="${docBankDetails !=null}">
+            <%@include file="attr_type/docBankDetails.jsp" %>
+        </c:if>
 
-        <%--<input type="submit" value="test"/>--%>
-    <%--</form:form>--%>
+        <c:if test="${docSign !=null}">
+            <%@include file="attr_type/docSign.jsp" %>
+            <hr>
+        </c:if>
+
+        <input type="submit" value="test"/>
+    </form:form>
 
 </div>
 </body>

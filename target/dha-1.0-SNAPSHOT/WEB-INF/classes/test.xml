@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doc xmlns="http://document.dha.gov.by" docName="Письмо">
 
+
+    <docSql>
+        <sqlQuery sqlKey="NRI.LIST_DETAIL1" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=3"/>
+        <sqlQuery sqlKey="NRI.LIST_DETAIL2" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=4"/>
+    </docSql>
+
+    <!--<docAttr type="HBlock" header="" visible="1">-->
+        <!--<attr num="30" type="SelectOneChoice" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
+        <!--<attr num="30" type="SelectOneChoiceOrInput" sqlKey="NRI.LIST_DETAIL1" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">-->
+            <!--<attr num="30" type="SelectOneChoice" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
+            <!--<attr num="30" type="String" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
+        <!--</attr>-->
+    <!--</docAttr>-->
+
+
    <docAttr type="HBlock" header="О невозможности проведения работ по проверке имущества на качество и безопасность" visible="1">
       <attr type="HBlock" sql="www" visible="1">
          <attr type="Date"  header="Рег. дата исх." visible="1" editable="1" required="1"><value></value></attr>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema
+<schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://www.w3.org/2001/XMLSchema"
         xmlns:tns="http://document.dha.gov.by"
         targetNamespace="http://document.dha.gov.by"
@@ -17,21 +17,29 @@
         <attribute name="editable" type="int"/>
         <attribute name="required" type="int"/>
         <attribute name="alignment" type="string"/>
-        <attribute name="inputWidth" type="string"/>
-        <attribute name="textWidth" type="string"/>
+        <attribute name="inputWidth" type="int"/>
+        <attribute name="textWidth" type="int"/>
+        <attribute name="sqlKey" type="string"/>
     </attributeGroup>
 
     <attributeGroup name="DataRestrictAttrGroup">
         <attribute name="columnRef" type="string"/>
+
         <attribute name="sql" type="string"/>
         <attribute name="regularExp" type="string"/>
+        <!--для string-->
         <attribute name="minLength" type="int"/>
         <attribute name="maxLength" type="int"/>
+        <!--для string-->
         <attribute name="minValue" type="string"/>
         <attribute name="maxValue" type="string"/>
+        <!--для date, number-->
         <attribute name="mask" type="string"/>
+        <!--для date, number-->
         <attribute name="formula" type="string"/>
+        <!-- для date-->
         <attribute name="formatJava" type="string"/>
+        <!--для date-->
         <attribute name="formatOracle" type="string"/>
     </attributeGroup>
 
@@ -79,23 +87,6 @@
         </sequence>
         <attributeGroup ref="tns:SimpleAttrGroup"/>
     </complexType>
-
-    <!--
-      <complexType name="Attr">
-        <simpleContent>
-          <extension base="string">
-            <attributeGroup ref="tns:ColumnDataAttrGroup"/>
-          </extension>
-        </simpleContent>
-      </complexType>
-
-      <complexType name="Attr" mixed="true">
-        <sequence>
-          <element name="attr" type="tns:Attr" maxOccurs="unbounded"/>
-        </sequence>
-        <attributeGroup ref="tns:ColumnDataAttrGroup"/>
-      </complexType>
-    -->
 
     <complexType name="Attr">
         <sequence>
@@ -204,6 +195,18 @@
     </complexType>
 
 
+    <xsd:complexType name="DocSql">
+        <sequence>
+            <element name="sqlQuery" type="tns:SqlQuery" maxOccurs="unbounded"/>
+        </sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="SqlQuery">
+        <attribute name="sqlKey" type="string"/>
+        <attribute name="sqlQuery" type="string"/>
+    </xsd:complexType>
+
+
     <complexType name="Doc">
         <sequence>
             <element name="docAttr" type="tns:DocAttr"/>
@@ -214,6 +217,7 @@
             <element name="docAssets" type="tns:SimpleTable"/>
             <element name="docServices" type="tns:SimpleTable"/>
             <element name="docBankDetails" type="tns:DocBankDetails"/>
+            <element name="docSql" type="tns:DocSql"/>
         </sequence>
         <attribute name="idDoc" type="int"/>
         <attribute name="idDocType" type="int"/>

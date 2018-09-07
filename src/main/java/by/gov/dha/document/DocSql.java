@@ -1,26 +1,28 @@
 
 package by.gov.dha.document;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Attr complex type.
+ * <p>Java class for DocSql complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Attr">
+ * &lt;complexType name="DocSql">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="attr" type="{http://document.dha.gov.by}Attr" maxOccurs="unbounded"/>
+ *         &lt;element name="sqlQuery" type="{http://document.dha.gov.by}SqlQuery" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attGroup ref="{http://document.dha.gov.by}SimpleAttrGroup"/>
- *       &lt;attGroup ref="{http://document.dha.gov.by}DataRestrictAttrGroup"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -29,16 +31,13 @@ import java.util.List;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Attr", namespace = "http://document.dha.gov.by", propOrder = {
-    "value",
-    "attr"
+@XmlType(name = "DocSql", namespace = "http://document.dha.gov.by", propOrder = {
+    "sqlQuery"
 })
-public class Attr {
+public class DocSql {
 
     @XmlElement(namespace = "http://document.dha.gov.by", required = true)
-    protected String value;
-    @XmlElement(namespace = "http://document.dha.gov.by", required = true)
-    protected List<Attr> attr;
+    protected List<SqlQuery> sqlQuery;
     @XmlAttribute(name = "num")
     protected Integer num;
     @XmlAttribute(name = "type")
@@ -61,100 +60,38 @@ public class Attr {
     protected Integer required;
     @XmlAttribute(name = "alignment")
     protected String alignment;
-    @XmlAttribute(name = "columnRef")
-    protected String columnRef;
-    @XmlAttribute(name = "sqlKey")
-    protected String sqlKey;
-    @XmlAttribute(name = "regularExp")
-    protected String regularExp;
-    @XmlAttribute(name = "minLength")
-    protected Integer minLength;
-    @XmlAttribute(name = "maxLength")
-    protected Integer maxLength;
-    @XmlAttribute(name = "minValue")
-    protected String minValue;
-    @XmlAttribute(name = "maxValue")
-    protected String maxValue;
-    @XmlAttribute(name = "mask")
-    protected String mask;
-    @XmlAttribute(name = "formula")
-    protected String formula;
-    @XmlAttribute(name = "formatJava")
-    protected String formatJava;
-    @XmlAttribute(name = "formatOracle")
-    protected String formatOracle;
     @XmlAttribute(name = "inputWidth")
-    protected String inputWidth;
+    protected Integer inputWidth;
     @XmlAttribute(name = "textWidth")
-    protected String textWidth;
-
-    public String getTextWidth() {
-        return textWidth;
-    }
-
-    public void setTextWidth(String textWidth) {
-        this.textWidth = textWidth;
-    }
-
-    public String getInputWidth() {
-        return inputWidth;
-    }
-
-    public void setInputWidth(String inputWidth) {
-        this.inputWidth = inputWidth;
-    }
+    protected Integer textWidth;
 
     /**
-     * Gets the value of the value property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getValue() {
-        return value;
-    }
-
-    /**
-     * Sets the value of the value property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    /**
-     * Gets the value of the attr property.
+     * Gets the value of the sqlQuery property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the attr property.
+     * This is why there is not a <CODE>set</CODE> method for the sqlQuery property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAttr().add(newItem);
+     *    getSqlQuery().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Attr }
+     * {@link SqlQuery }
      * 
      * 
      */
-    public List<Attr> getAttr() {
-        if (attr == null) {
-            attr = new ArrayList<Attr>();
+    public List<SqlQuery> getSqlQuery() {
+        if (sqlQuery == null) {
+            sqlQuery = new ArrayList<SqlQuery>();
         }
-        return this.attr;
+        return this.sqlQuery;
     }
 
     /**
@@ -422,267 +359,51 @@ public class Attr {
     }
 
     /**
-     * Gets the value of the columnRef property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getColumnRef() {
-        return columnRef;
-    }
-
-    /**
-     * Sets the value of the columnRef property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setColumnRef(String value) {
-        this.columnRef = value;
-    }
-
-    /**
-     * Gets the value of the sql property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSql() {
-        return sqlKey;
-    }
-
-    /**
-     * Sets the value of the sql property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSql(String value) {
-        this.sqlKey = value;
-    }
-
-    /**
-     * Gets the value of the regularExp property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRegularExp() {
-        return regularExp;
-    }
-
-    /**
-     * Sets the value of the regularExp property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRegularExp(String value) {
-        this.regularExp = value;
-    }
-
-    /**
-     * Gets the value of the minLength property.
+     * Gets the value of the inputWidth property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getMinLength() {
-        return minLength;
+    public Integer getInputWidth() {
+        return inputWidth;
     }
 
     /**
-     * Sets the value of the minLength property.
+     * Sets the value of the inputWidth property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setMinLength(Integer value) {
-        this.minLength = value;
+    public void setInputWidth(Integer value) {
+        this.inputWidth = value;
     }
 
     /**
-     * Gets the value of the maxLength property.
+     * Gets the value of the textWidth property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getMaxLength() {
-        return maxLength;
+    public Integer getTextWidth() {
+        return textWidth;
     }
 
     /**
-     * Sets the value of the maxLength property.
+     * Sets the value of the textWidth property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setMaxLength(Integer value) {
-        this.maxLength = value;
-    }
-
-    /**
-     * Gets the value of the minValue property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMinValue() {
-        return minValue;
-    }
-
-    /**
-     * Sets the value of the minValue property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMinValue(String value) {
-        this.minValue = value;
-    }
-
-    /**
-     * Gets the value of the maxValue property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaxValue() {
-        return maxValue;
-    }
-
-    /**
-     * Sets the value of the maxValue property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaxValue(String value) {
-        this.maxValue = value;
-    }
-
-    /**
-     * Gets the value of the mask property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMask() {
-        return mask;
-    }
-
-    /**
-     * Sets the value of the mask property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMask(String value) {
-        this.mask = value;
-    }
-
-    /**
-     * Gets the value of the formula property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFormula() {
-        return formula;
-    }
-
-    /**
-     * Sets the value of the formula property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFormula(String value) {
-        this.formula = value;
-    }
-
-    /**
-     * Gets the value of the formatJava property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFormatJava() {
-        return formatJava;
-    }
-
-    /**
-     * Sets the value of the formatJava property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFormatJava(String value) {
-        this.formatJava = value;
-    }
-
-    /**
-     * Gets the value of the formatOracle property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFormatOracle() {
-        return formatOracle;
-    }
-
-    /**
-     * Sets the value of the formatOracle property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFormatOracle(String value) {
-        this.formatOracle = value;
+    public void setTextWidth(Integer value) {
+        this.textWidth = value;
     }
 
 }

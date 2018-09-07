@@ -37,8 +37,8 @@ public class Column {
     protected List<Column> column;
     @XmlAttribute(name = "columnRef")
     protected String columnRef;
-    @XmlAttribute(name = "sql")
-    protected String sql;
+    @XmlAttribute(name = "sqlKey")
+    protected String sqlKey;
     @XmlAttribute(name = "regularExp")
     protected String regularExp;
     @XmlAttribute(name = "minLength")
@@ -153,7 +153,7 @@ public class Column {
      *     
      */
     public String getSql() {
-        return sql;
+        return sqlKey;
     }
 
     /**
@@ -165,7 +165,7 @@ public class Column {
      *     
      */
     public void setSql(String value) {
-        this.sql = value;
+        this.sqlKey = value;
     }
 
     /**
