@@ -10,9 +10,9 @@ import java.util.Map;
 
 public interface SqlValues {
 
-    List<String> getArgumentList(String sqlQuery) throws SQLException;
-
-    Connection getDBConnection();
+//    List<String> getArgumentList(String sqlQuery) throws SQLException;
+//
+//    Connection getDBConnection();
 
     Map<String, List<String>> getSqlQueryFromDoc(Doc doc);
 

@@ -5,40 +5,42 @@
     <docSql>
         <sqlQuery sqlKey="NRI.LIST_DETAIL1" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=3"/>
         <sqlQuery sqlKey="NRI.LIST_DETAIL2" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=4"/>
+        <sqlQuery sqlKey="organization" sqlQuery="select ID_ORGANIZATION as ID, NAME_FULL_RU as NAME from NRI.ORGANIZATION"/>
     </docSql>
 
-    <!--<docAttr type="HBlock" header="" visible="1">-->
-        <!--<attr num="30" type="SelectOneChoice" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
-        <!--<attr num="30" type="SelectOneChoiceOrInput" sqlKey="NRI.LIST_DETAIL1" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">-->
-            <!--<attr num="30" type="SelectOneChoice" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
-            <!--<attr num="30" type="String" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>-->
-        <!--</attr>-->
-    <!--</docAttr>-->
+    <docAttr type="HBlock" header="" visible="1">
+        <attr num="30" type="SelectOneChoice" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>
+        <attr num="30" type="SelectOneChoiceOrInput" sqlKey="NRI.LIST_DETAIL1" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">
+            <attr num="30" type="SelectOneChoice" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>
+            <attr num="30" type="String" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>
+        </attr>
+    </docAttr>
 
 
-   <docAttr type="HBlock" header="О невозможности проведения работ по проверке имущества на качество и безопасность" visible="1">
-      <attr type="HBlock" sql="www" visible="1">
-         <attr type="Date"  header="Рег. дата исх." visible="1" editable="1" required="1"><value></value></attr>
-         <attr type="String" header="Рег. номер исх" footer="номер" visible="1" editable="1"  required="1"><value></value></attr>
-      </attr>
-      <attr type="HBlock" visible="1">
-         <attr type="String" inputWidth="900" alignment="left" header="Примечание" editable="1" visible="1"  required="1"><value></value></attr>
-      </attr>
-      <attr type="HBlock" header="Приложение: " visible="1">
-         <attr type="String" inputWidth="50" alignment="left" prefix="на" postfix="л. " editable="1" visible="1"  required="1"><value></value></attr>
-         <attr type="String" inputWidth="50" alignment="left" prefix="в" postfix="экз" editable="1" visible="1"  required="1"><value></value></attr>
-      </attr>
+   <!--<docAttr type="HBlock" header="О невозможности проведения работ по проверке имущества на качество и безопасность" visible="1">-->
+      <!--<attr type="HBlock" sql="www" visible="1">-->
+         <!--<attr type="Date"  header="Рег. дата исх." visible="1" editable="1" required="1"><value></value></attr>-->
+         <!--<attr type="String" header="Рег. номер исх" footer="номер" visible="1" editable="1"  required="1"><value></value></attr>-->
+      <!--</attr>-->
+      <!--<attr type="HBlock" visible="1">-->
+         <!--<attr type="String" inputWidth="900" alignment="left" header="Примечание" editable="1" visible="1"  required="1"><value></value></attr>-->
+      <!--</attr>-->
+      <!--<attr type="HBlock" header="Приложение: " visible="1">-->
+         <!--<attr type="String" inputWidth="50" alignment="left" prefix="на" postfix="л. " editable="1" visible="1"  required="1"><value></value></attr>-->
+         <!--<attr type="String" inputWidth="50" alignment="left" prefix="в" postfix="экз" editable="1" visible="1"  required="1"><value></value></attr>-->
+      <!--</attr>-->
 
-       <attr type="HBlock" header="Исполнитель: " visible="1">
-           <attr type="String" header="Фамилия" footer="Фамилия" visible="1" editable="1" required="1" alignment="left"><value></value></attr>
-           <attr type="String" header="Номер телефона" footer="Номер телефона" visible="1" editable="1" required="1"><value></value></attr>
-       </attr>
-   </docAttr>
+       <!--<attr type="HBlock" header="Исполнитель: " visible="1">-->
+           <!--<attr type="String" header="Фамилия" footer="Фамилия" visible="1" editable="1" required="1" alignment="left"><value></value></attr>-->
+           <!--<attr type="String" header="Номер телефона" footer="Номер телефона" visible="1" editable="1" required="1"><value></value></attr>-->
+       <!--</attr>-->
+   <!--</docAttr>-->
 
    <docOrgs type="VBlock" header="Информационное письмо для:" visible="1">
       <refOrg num="15" type="VBlock" header="Отправитель:" visible="1">
-          <attr type="String" header="Наименование организации УО" inputWidth="600" editable="1" visible="1" required="1" >
-          <value></value>
+          <attr num="30" type="SelectOneChoiceOrInput" sqlKey="organization" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">
+              <attr num="30" inputWidth="500" type="SelectOneChoice" sqlKey="organization" code="keeper" visible="1" editable="1" required="1"/>
+              <attr num="30" type="String" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>
           </attr>
       </refOrg>
        <refOrg num="15" type="VBlock" header="Получатель:"  visible="1">
