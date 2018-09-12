@@ -1,42 +1,42 @@
 package by.gov.dha.dao;
 
+import by.gov.dha.dao.properties.JDBCProperties;
 import by.gov.dha.document.Doc;
 import by.gov.dha.document.SqlQuery;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class SqlValuesImpl implements SqlValues {
 
 
-    private static final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private static final String DB_CONNECTION = "jdbc:oracle:thin:@//10.0.0.202:1521/conf";
-    private static final String DB_USER = "KONF";
-    private static final String DB_PASSWORD = "KONF";
+    private final static String PROPERTY_NAME = "DataBaseProperties";
+    private final static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(PROPERTY_NAME);
+
+    private static final String DB_URL = RESOURCE_BUNDLE.getString(JDBCProperties.DB_CONNECTION.name());
+    private static final String DB_DRIVER = RESOURCE_BUNDLE.getString(JDBCProperties.DB_DRIVER.name());
+    private static final String DB_USER = RESOURCE_BUNDLE.getString(JDBCProperties.DB_USER.name());
+    private static final String DB_PASSWORD = RESOURCE_BUNDLE.getString(JDBCProperties.DB_PASSWORD.name());
 
     private static final String COLUMN_ID = "ID";
     private static final String COLUMN_DETAIL = "NAME";
 
 
-    public Map<String, List<String>> getSqlQueryFromDoc(Doc doc){
+    public Map<String, List<String>> getSqlQueryFromDoc(Doc doc) {
         Map<String, List<String>> sqlValuesMap = new HashMap<>();
         for (SqlQuery sqlQuery : doc.getDocSql().getSqlQuery()) {
             try {
                 sqlValuesMap.put(sqlQuery.getSqlKey(), getArgumentList(sqlQuery.getSqlQuery()));
             } catch (SQLException e) {
-                System.out.println("ERROR: "+e.getErrorCode());
+                System.out.println("ERROR: " + e.getErrorCode());
             }
         }
         return sqlValuesMap;
     }
 
-
-    public List<String> getArgumentList(String sqlQuery) throws SQLException {
+    private List<String> getArgumentList(String sqlQuery) throws SQLException {
 
         List<String> resultList = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class SqlValuesImpl implements SqlValues {
             preparedStatement = dbConnection.prepareStatement(sqlQuery);
 
             ResultSet set = preparedStatement.executeQuery();
-            while (set.next()){
+            while (set.next()) {
                 resultList.add(set.getString(COLUMN_DETAIL));
             }
             return resultList;
@@ -66,7 +66,7 @@ public class SqlValuesImpl implements SqlValues {
         return null;
     }
 
-    public Connection getDBConnection() {
+    private Connection getDBConnection() {
         Connection dbConnection = null;
         try {
             Class.forName(DB_DRIVER);
@@ -75,7 +75,7 @@ public class SqlValuesImpl implements SqlValues {
         }
         try {
             dbConnection = DriverManager.getConnection(
-                    DB_CONNECTION, DB_USER, DB_PASSWORD);
+                    DB_URL, DB_USER, DB_PASSWORD);
             return dbConnection;
         } catch (SQLException e) {
             System.out.println("ERROR: " + e.getMessage());

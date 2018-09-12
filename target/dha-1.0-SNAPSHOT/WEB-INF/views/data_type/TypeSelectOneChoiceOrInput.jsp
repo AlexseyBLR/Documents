@@ -9,13 +9,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"
             integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU"
             crossorigin="anonymous"></script>
+
+    <style>
+        select{
+            width: 700px;
+        }
+    </style>
 </head>
 
 <div class="form-control">
 
     <c:if test="${attr.editable eq '1'}">
         <c:if test="${attr.visible eq '1'}">
-            <%--<label for="radio">${attr.header}</label>--%>
             <input id="radio" type="radio" name="selectOrInputType" value="inputText"/><input
                 type="text" name="selectOrInputInputValue" value="${attr.attr.get(0).value}"/>
 
@@ -33,7 +38,6 @@
 
     <c:if test="${attr.editable eq '0'}">
         <c:if test="${attr.visible eq '1'}">
-            <%--${attr.header}--%>
             <input type="radio" name="selectOrInputType" value="inputText" disabled/><input
                 type="text" name="selectOrInputInputValue" value="${attr.attr.get(0).value}"
                 placeholder="${attr.attr.get(0).footer}" disabled/>

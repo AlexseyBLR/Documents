@@ -5,6 +5,7 @@
     <docSql>
         <sqlQuery sqlKey="NRI.LIST_DETAIL1" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=3"/>
         <sqlQuery sqlKey="NRI.LIST_DETAIL2" sqlQuery="select ID_LIST_DETAIL AS ID, NAME_LIST_DETAIL as NAME from NRI.LIST_DETAIL where LIST_DETAIL.ID_LIST=4"/>
+        <sqlQuery sqlKey="organization" sqlQuery="select ID_ORGANIZATION as ID, NAME_FULL_RU as NAME from NRI.ORGANIZATION"/>
     </docSql>
 
     <!--<docAttr type="HBlock" header="" visible="1">-->
@@ -37,8 +38,9 @@
 
    <docOrgs type="VBlock" header="Информационное письмо для:" visible="1">
       <refOrg num="15" type="VBlock" header="Отправитель:" visible="1">
-          <attr type="String" header="Наименование организации УО" inputWidth="600" editable="1" visible="1" required="1" >
-          <value></value>
+          <attr num="30" type="SelectOneChoiceOrInput" sqlKey="organization" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1">
+              <attr num="30" inputWidth="500" type="SelectOneChoice" sqlKey="organization" code="keeper" visible="1" editable="1" required="1"/>
+              <attr num="30" type="String" sqlKey="NRI.LIST_DETAIL2" code="keeper" header="Передачи указанного имущества на хранение:" visible="1" editable="1" required="1"/>
           </attr>
       </refOrg>
        <refOrg num="15" type="VBlock" header="Получатель:"  visible="1">
